@@ -1,0 +1,19 @@
+.main-component-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-component-toolbar {
+
+  .main-component-toolbar__img {
+    width: 10%;
+    height: 100%;
+  }
+}

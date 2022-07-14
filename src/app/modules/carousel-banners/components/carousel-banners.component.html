@@ -1,0 +1,17 @@
+<div *ngIf="images && images.length > 0" class="carousel-container">
+  <div *ngFor="let image of images; let i=index">
+    <img [src]="image.path" [alt]="image.text" [ngClass]="{'image-active': selectedIndex === i}" class="fade">
+    <div class="carousel-container__title" [ngClass]="selectedIndex === i ? image.zone : ''">
+      <span>
+        {{image.text}}
+      </span>
+    </div>
+  </div>
+
+
+  <div *ngIf="indicators" class="carousel-dot-container">
+    <span *ngFor="let dot of images; let i=index" [ngClass]="{'active': selectedIndex===i}"
+      class="carousel-dot-container__dot" (click)="selectImage(i)">
+    </span>
+  </div>
+</div>
