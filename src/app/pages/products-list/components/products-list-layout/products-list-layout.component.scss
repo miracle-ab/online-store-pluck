@@ -1,0 +1,46 @@
+.products-list-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .products-list-items__card {
+    width: 290px;
+    margin: 20px;
+    border-radius: 11px;
+  }
+
+  .card__content {
+    height: 20vh;
+  }
+
+  .card__title {
+    font-size: 25px;
+  }
+
+  .card__subtitle {
+    color: rgb(228, 79, 159);
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .card__description {
+    margin-top: auto;
+    color: #9e9e9e;
+  }
+
+  .card__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 15px 0;
+
+    .card__btn:hover {
+      color: rgb(228, 79, 159);
+    }
+  }
+
+  .card-header-image {
+    background-size: cover;
+  }
+}

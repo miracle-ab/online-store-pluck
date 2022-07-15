@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from './core/constants/routers-list';
-import { MainComponentComponent } from './layout/main-layout/main-component.component';
 
 const routes: Routes = [
   {
     path: ROUTES.MAIN_ROUTH,
-    component: MainComponentComponent,
+    redirectTo: ROUTES.SHOWCASE_PAGE_ROUTH,
     pathMatch: 'full',
+  },
+  {
+    path: ROUTES.SHOWCASE_PAGE_ROUTH,
+    loadChildren: () =>
+      import('./layout/main-component.module').then(
+        (m) => m.MainComponentModule
+      ),
   },
 ];
 

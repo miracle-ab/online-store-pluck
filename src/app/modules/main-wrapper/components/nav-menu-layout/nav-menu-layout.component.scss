@@ -1,0 +1,16 @@
+.cart-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-menu-component-toolbar {
+  background-color: #f5f5f5;
+
+  span {
+    margin-right: 15px;
+  }
+
+  .nav-menu-component-toolbar__img {
+    width: 10%;
+    height: 100%;
+  }
+}
