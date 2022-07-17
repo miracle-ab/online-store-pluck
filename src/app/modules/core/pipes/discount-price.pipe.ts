@@ -5,16 +5,16 @@ import { ProductDetailinterface } from 'src/app/core/interfaces/product-detail.i
   name: 'discountPrice',
 })
 export class DiscountPricePipe implements PipeTransform {
-  transform(product: ProductDetailinterface): number | undefined {
-    if (product.discount?.percent) {
+  transform(product: ProductDetailinterface | null): number | undefined {
+    if (product?.discount?.percent) {
       const priceWithDiscount =
         product.price * ((100 - product.discount.percent) / 100);
       return priceWithDiscount;
     }
-    if (product.discount?.exact) {
+    if (product?.discount?.exact) {
       const priceWithExact = product.price - product.discount.exact;
       return priceWithExact;
     }
-    return product.price;
+    return product?.price;
   }
 }

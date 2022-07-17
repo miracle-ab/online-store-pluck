@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { CarouselBanersModule } from '../carousel-banners/carousel-banners.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CarouselBanersModule } from '../carousel-banners/carousel-banners.modul
     MatBadgeModule,
     MatButtonModule,
     CarouselBanersModule,
+    RouterModule,
   ],
   exports: [
     MainWrapperComponent,

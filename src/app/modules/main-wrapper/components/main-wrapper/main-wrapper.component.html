@@ -3,7 +3,8 @@
   <div class="main-component-wrapper">
     <app-nav-menu-layout></app-nav-menu-layout>
 
-    <app-carousel-banners [autoSlide]="true" [slideInterval]="10000" [images]="banners"></app-carousel-banners>
+    <app-carousel-banners *ngIf="loadBanner$ | async" [autoSlide]="true" [slideInterval]="10000" [images]="banners">
+    </app-carousel-banners>
 
     <ng-content></ng-content>
   </div>

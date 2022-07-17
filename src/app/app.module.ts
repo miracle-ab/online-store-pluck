@@ -8,6 +8,10 @@ import { AppConfigService } from './core/services/app-config.service';
 import { CarouselBanersModule } from './modules/carousel-banners/carousel-banners.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponentModule } from './layout/main-component.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { ProductsEffects } from './store/effects/products.effects';
+import { reducers } from './store/reducers';
 
 export function initConfig(appConfig: AppConfigService) {
   return () => appConfig.loadConfig();
@@ -22,6 +26,8 @@ export function initConfig(appConfig: AppConfigService) {
     CarouselBanersModule,
     BrowserAnimationsModule,
     MainComponentModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([ProductsEffects]),
   ],
   providers: [
     {

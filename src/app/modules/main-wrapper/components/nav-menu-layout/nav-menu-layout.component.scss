@@ -9,8 +9,14 @@
     margin-right: 15px;
   }
 
-  .nav-menu-component-toolbar__img {
-    width: 10%;
+  a {
+    width: 100px;
     height: 100%;
+  }
+
+  .nav-menu-component-toolbar__img {
+    width: 100px;
+    height: 100%;
+    cursor: pointer;
   }
 }

@@ -1,0 +1,23 @@
+<div class="product-detail-container">
+  <mat-card class="product-detail-card">
+    <mat-card-title-group>
+      <mat-card-title class="card__title">{{(product$ | async)?.name | titlecase}}</mat-card-title>
+      <mat-card-subtitle class="card__subtitle">{{(product$ | async)?.price}}$</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="(product$ | async)?.discount">with discount
+        {{(product$ | async) | discountPrice}}$
+      </mat-card-subtitle>
+      <div class="card__image"><img mat-card-image [src]="(product$ | async)?.image"></div>
+    </mat-card-title-group>
+    <mat-card-content class="card__description" [innerHTML]="(product$ | async)?.description">
+    </mat-card-content>
+
+    <mat-card-actions class="card__actions">
+      <button class="card__btn" mat-button>
+        <mat-icon>add</mat-icon>
+      </button>
+      <button class="card__btn" mat-button>
+        <mat-icon>remove</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
