@@ -2,7 +2,6 @@
   <mat-card class="shopping-cart-card" *ngIf="items.length > 0;else emptyBlock">
     <div class="card-header">
       <span class="card-header__title">Shopping Cart</span>
-      <span class="card-header__action">Remove all</span>
     </div>
 
     <div class="card-item" *ngFor="let item of items; let i = index">
