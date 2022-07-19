@@ -12,6 +12,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductsEffects } from './store/effects/products.effects';
 import { reducers } from './store/reducers';
+import { ShoppingCartEffects } from './store/effects/shopping-cart.effects';
+import { CoreModule } from './modules/core/core.module';
 
 export function initConfig(appConfig: AppConfigService) {
   return () => appConfig.loadConfig();
@@ -27,7 +29,7 @@ export function initConfig(appConfig: AppConfigService) {
     BrowserAnimationsModule,
     MainComponentModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([ProductsEffects]),
+    EffectsModule.forRoot([ProductsEffects, ShoppingCartEffects]),
   ],
   providers: [
     {

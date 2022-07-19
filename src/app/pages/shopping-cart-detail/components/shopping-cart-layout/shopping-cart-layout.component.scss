@@ -1,0 +1,134 @@
+.shopping-cart-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  .shopping-cart-card {
+    display: flex;
+    flex-direction: column;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+
+      &__title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2F3841;
+      }
+
+      &__action {
+        font-size: 14px;
+        font-weight: 500;
+        color: #E44C4C;
+        cursor: pointer;
+        border-bottom: 1px solid #E44C4C;
+      }
+    }
+
+    .card-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 35px;
+
+      &__name {
+        .name {
+          padding-top: 10px;
+          line-height: 10px;
+          font-size: 22px;
+          font-weight: 500;
+          color: #202020;
+        }
+      }
+
+      &__quantity {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+        .quantity {
+          font-size: 20px;
+          font-weight: 500;
+          color: #202020;
+          padding: 10px;
+        }
+      }
+
+      &__prices {
+        display: flex;
+        flex-direction: column;
+
+        .price {
+          padding-top: 20px;
+          font-size: 26px;
+          font-weight: 800;
+          color: #202020;
+        }
+
+        .remove {
+          padding-top: 5px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #E44C4C;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .card-total-checkout {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      .total {
+        display: flex;
+        justify-content: space-between;
+
+        .sub-total-items {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-right: 150px;
+        }
+
+        .sub-total {
+          font-size: 22px;
+          font-weight: 700;
+          color: #202020;
+        }
+
+        .items {
+          font-size: 16px;
+          font-weight: 500;
+          color: #909090;
+        }
+
+        .total-amount {
+          font-size: 36px;
+          font-weight: 900;
+          color: #202020;
+        }
+      }
+
+      .checkout-btn {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  mat-form-field {
+    width: 65%;
+    text-align: center;
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
+}

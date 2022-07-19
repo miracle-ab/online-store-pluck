@@ -1,6 +1,6 @@
 export const routers = {
   main: '',
-  showcase: 'showcase',
+  shoppingCart: 'shopping-cart',
   products: 'products',
   productId: 'productId',
 };

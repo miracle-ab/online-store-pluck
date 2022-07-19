@@ -1,7 +1,8 @@
 <div class="main-component-container">
 
   <div class="main-component-wrapper">
-    <app-nav-menu-layout></app-nav-menu-layout>
+
+    <app-nav-menu-layout [productsQuantity$]="productsQuantity$"></app-nav-menu-layout>
 
     <app-carousel-banners *ngIf="loadBanner$ | async" [autoSlide]="true" [slideInterval]="10000" [images]="banners">
     </app-carousel-banners>

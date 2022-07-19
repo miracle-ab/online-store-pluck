@@ -1,4 +1,4 @@
-export interface ProductDetailinterface {
+export interface ProductDetailInterface {
   id: string;
   name: string;
   description: string;
@@ -9,4 +9,5 @@ export interface ProductDetailinterface {
     percent?: number;
   };
   image: string;
+  quantity: number;
 }

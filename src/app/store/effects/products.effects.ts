@@ -8,13 +8,13 @@ import {
 } from '../reducers/products.actions';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { ProductDetailinterface } from 'src/app/core/interfaces/product-detail.interface';
+import { ProductDetailInterface } from 'src/app/core/interfaces/product-detail.interface';
 import { Inject, Injectable } from '@angular/core';
 import {
   getProductAction,
   setProducActionError,
   setProductAction,
-} from '../reducers/product-detail.action';
+} from '../reducers/product-detail.actions';
 
 @Injectable()
 export class ProductsEffects {
@@ -29,7 +29,7 @@ export class ProductsEffects {
       ofType(getProductsListAction),
       mergeMap(() => {
         return this.productsApiService.getListOfProducts().pipe(
-          map((result: ProductDetailinterface[]) => {
+          map((result: ProductDetailInterface[]) => {
             return setProductsListAction({ products: result ? result : [] });
           }),
           catchError((err: string) => {
@@ -44,12 +44,9 @@ export class ProductsEffects {
     return this.actions$.pipe(
       ofType(getProductAction),
       mergeMap((actionData) => {
-        return this.productsApiService.getListOfProducts().pipe(
-          map((result: ProductDetailinterface[]) => {
-            const product = result.filter(
-              (product) => product.id === actionData.id
-            )[0];
-            return setProductAction({ product: product ? product : null });
+        return this.productsApiService.getProduct(actionData.id).pipe(
+          map((result: ProductDetailInterface) => {
+            return setProductAction({ product: result ? result : null });
           }),
           catchError((err: string) => {
             return of(setProducActionError({ error: err }));

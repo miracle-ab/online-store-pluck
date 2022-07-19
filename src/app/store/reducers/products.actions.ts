@@ -6,12 +6,12 @@ import {
   on,
   props,
 } from '@ngrx/store';
-import { ProductDetailinterface } from 'src/app/core/interfaces/product-detail.interface';
+import { ProductDetailInterface } from 'src/app/core/interfaces/product-detail.interface';
 
 export interface ProductsListInterface {
   loadBanners: boolean;
-  products: ProductDetailinterface[];
-  product: ProductDetailinterface | null;
+  products: ProductDetailInterface[];
+  product: ProductDetailInterface | null;
 }
 
 export const productsListPageInitState: ProductsListInterface = {
@@ -25,7 +25,7 @@ export const getProductsListAction = createAction(
 );
 export const setProductsListAction = createAction(
   '[PRODUCTS_PAGE] setProductsListAction',
-  props<{ products: ProductDetailinterface[] }>()
+  props<{ products: ProductDetailInterface[] }>()
 );
 export const setProductsListActionError = createAction(
   '[PRODUCTS_PAGE] setProductsListActionError',

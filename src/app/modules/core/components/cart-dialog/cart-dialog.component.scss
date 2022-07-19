@@ -1,0 +1,11 @@
+.cart-dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 25px;
+    font-weight: 500;
+  }
+}

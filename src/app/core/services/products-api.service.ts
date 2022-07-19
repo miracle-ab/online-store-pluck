@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { ProductDetailinterface } from '../interfaces/product-detail.interface';
+import { ProductDetailInterface } from '../interfaces/product-detail.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -14,9 +13,15 @@ export class ProductsApiService {
 
   constructor(private http: HttpClient) {}
 
-  getListOfProducts(): Observable<ProductDetailinterface[]> {
-    return this.http.get<ProductDetailinterface[]>(
+  getListOfProducts(): Observable<ProductDetailInterface[]> {
+    return this.http.get<ProductDetailInterface[]>(
       '/assets/configs/goods-mock/index.json'
+    );
+  }
+
+  getProduct(id: string): Observable<ProductDetailInterface> {
+    return this.http.get<ProductDetailInterface>(
+      `/assets/configs/goods-mock/${id}.json`
     );
   }
 }

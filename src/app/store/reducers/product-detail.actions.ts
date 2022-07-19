@@ -6,11 +6,11 @@ import {
   on,
   props,
 } from '@ngrx/store';
-import { ProductDetailinterface } from 'src/app/core/interfaces/product-detail.interface';
+import { ProductDetailInterface } from 'src/app/core/interfaces/product-detail.interface';
 
 export interface ProductDetailPageInterface {
   loadBanners: boolean;
-  product: ProductDetailinterface | null;
+  product: ProductDetailInterface | null;
 }
 
 export const productPageInitState: ProductDetailPageInterface = {
@@ -24,7 +24,7 @@ export const getProductAction = createAction(
 );
 export const setProductAction = createAction(
   '[PRODUCTS_DETAIL_PAGE] setProductAction',
-  props<{ product: ProductDetailinterface | null }>()
+  props<{ product: ProductDetailInterface | null }>()
 );
 export const setProducActionError = createAction(
   '[PRODUCTS_DETAIL_PAGE] setProducActionError',

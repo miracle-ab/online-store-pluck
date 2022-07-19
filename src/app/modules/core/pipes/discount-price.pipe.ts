@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ProductDetailinterface } from 'src/app/core/interfaces/product-detail.interface';
+import { ProductDetailInterface } from 'src/app/core/interfaces/product-detail.interface';
 
 @Pipe({
   name: 'discountPrice',
 })
 export class DiscountPricePipe implements PipeTransform {
-  transform(product: ProductDetailinterface | null): number | undefined {
+  transform(product: ProductDetailInterface | null): number | undefined {
     if (product?.discount?.percent) {
       const priceWithDiscount =
         product.price * ((100 - product.discount.percent) / 100);

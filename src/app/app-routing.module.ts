@@ -27,6 +27,13 @@ const routes: Routes = [
             (m) => m.ProductDetailModule
           ),
       },
+      {
+        path: routers.shoppingCart,
+        loadChildren: () =>
+          import(
+            './pages/shopping-cart-detail/shopping-cart-detail.module'
+          ).then((m) => m.ShoppingCartDetailModule),
+      },
     ],
   },
 ];

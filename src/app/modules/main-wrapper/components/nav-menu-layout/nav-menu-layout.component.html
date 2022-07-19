@@ -4,6 +4,8 @@
   </a>
   <span class="cart-spacer"></span>
   <button mat-icon-button class="cart-icon">
-    <mat-icon matBadge="8" matBadgePosition="after" matBadgeColor="accent">shopping_cart</mat-icon>
+    <mat-icon [matBadge]="(productsQuantity$ | async)" matBadgePosition="after" matBadgeColor="accent"
+      routerLink="/shopping-cart">shopping_cart
+    </mat-icon>
   </button>
 </mat-toolbar>

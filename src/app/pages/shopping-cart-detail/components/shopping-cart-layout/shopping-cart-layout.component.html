@@ -1,0 +1,47 @@
+<div class="shopping-cart-container">
+  <mat-card class="shopping-cart-card" *ngIf="items.length > 0;else emptyBlock">
+    <div class="card-header">
+      <span class="card-header__title">Shopping Cart</span>
+      <span class="card-header__action">Remove all</span>
+    </div>
+
+    <div class="card-item" *ngFor="let item of items; let i = index">
+      <img [src]="item.image" [alt]="item.name">
+      <div class="card-item__name">
+        <span class="name">{{item.name}}</span>
+      </div>
+      <div class="card-item__quantity">
+        <mat-form-field>
+          <button mat-button mat-icon-button matPrefix aria-label="Remove" (click)="removeItemFromCart(item, i)">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <input matInput type="number" [(ngModel)]="item.quantity" value="{{item.quantity}}" min="1" type="number" />
+          <button mat-button mat-icon-button matSuffix aria-label="Add" (click)="addProductToCart(item, i)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="card-item__prices">
+        <span class="price">{{item.price | currency}}</span>
+      </div>
+    </div>
+
+    <div class="card-total-checkout">
+      <div>
+        <div class="total">
+          <div class="sub-total-items">
+            <div class="sub-total">Sub-Total</div>
+            <div class="items">{{totalItems}} items</div>
+          </div>
+          <span class="total-amount">{{total | currency}}</span>
+        </div>
+
+        <button class="checkout-btn" mat-raised-button color="primary" (click)="openDialog()">Proceed to
+          checkout</button>
+      </div>
+    </div>
+  </mat-card>
+  <ng-template #emptyBlock>
+    Shopping cart has no items
+  </ng-template>
+</div>
